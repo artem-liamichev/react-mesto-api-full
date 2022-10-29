@@ -1,0 +1,16 @@
+.login__save {
+    background-color: #fff;
+    border-radius: 2px;
+    height: 50px;
+    width: 358px;
+    color: black;
+    border:none;
+    transition: opacity 0.3s;
+    font-size: 18px;
+    margin-top: 185px
+  }
+  
+  .login__save:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
