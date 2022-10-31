@@ -13,10 +13,25 @@ const { cardRoutes } = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const errorHandler = require('./middlewares/errorHandler');
+// const cors = require('./middlewares/cors')
+const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/NotFoundError');
 const { validateUserBody, validateAuthentication } = require('./validators');
+const corsOptions = {
+  origin: [
+    'https://localhost:3000',
+    'http://localhost:3000',
+    'http://localhost:7777',
+    'https://localhost:7777',
+    'localhost:7777',
+    'localhost:3000',
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
 
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);

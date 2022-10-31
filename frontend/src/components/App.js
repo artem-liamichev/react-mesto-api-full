@@ -50,8 +50,8 @@ function App() {
       apiAuth
       .getContent(jwt)
       .then((res) => {
-        if (res) {
-          setUserEmail(res.data.email);
+        if (res._id) {
+          setUserEmail(res.email);
           setLoggedIn(true);
           history.push("/")
         }})
@@ -64,14 +64,9 @@ function App() {
     tokenCheck();
   }, []);
 
-  
-  useEffect(() => {
-    if (isLoggedIn) {
-      history.push('/');
-    }
-  }, [isLoggedIn, history]);
 
   const onLogin = (data) => {
+    // console.log('data:', data)
     return apiAuth
       .authorize(data)
       .then((data) => {
@@ -86,6 +81,7 @@ function App() {
     }
 
   const onRegister = (data) => {
+    // console.log('data:', data)
     return apiAuth
       .register(data)
       .then(() => {
@@ -119,7 +115,7 @@ function App() {
   }, [isLoggedIn])
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
     api.changeLikeCardStatus(card._id, !isLiked)
     .then((newCard) => {
       setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
@@ -191,7 +187,8 @@ function App() {
   function handleAddPlace(newCard) {
     api.addCard(newCard) 
       .then((newCard)=> {
-        setCards([newCard, ...cards]); 
+        // setCards([newCard, ...cards]); 
+        setCards([...cards, newCard]); 
         closeAllPopups()
       })
       .catch((err) => {

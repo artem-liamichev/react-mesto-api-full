@@ -109,11 +109,12 @@ const getUserById = (req, res, next) => {
 };
 
 const updateUserProfile = (req, res, next) => {
+  const { name, about } = req.body;
   User.findByIdAndUpdate(req.user._id, {
-    $set: { name: req.body.name, about: req.body.about },
+    $set: { name, about},
   }, { runValidators: true, new: true })
-    .then(() => {
-      res.status(200).send({ name: req.body.name, about: req.body.about });
+    .then((user) => {
+      res.status(200).send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -125,11 +126,12 @@ const updateUserProfile = (req, res, next) => {
 };
 
 const updateUserAvatar = (req, res, next) => {
+  const { avatar } = req.body
   User.findByIdAndUpdate(req.user._id, {
-    $set: { avatar: req.body.avatar },
+    $set: { avatar },
   }, { runValidators: true, new: true })
-    .then(() => {
-      res.send({ avatar: req.body.avatar });
+    .then((user) => {
+      res.send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
