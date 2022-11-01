@@ -19,12 +19,6 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/NotFoundError');
 const { validateUserBody, validateAuthentication } = require('./validators');
 const corsOptions = {
-  origin: [
-    'https://liamichev.students.nomoredomains.icu',
-    'http://liamichev.students.nomoredomains.icu',
-    'localhost:7777',
-    'localhost:3000',
-  ],
   credentials: true,
   optionsSuccessStatus: 200,
 };
