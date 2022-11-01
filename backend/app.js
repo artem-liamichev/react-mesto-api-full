@@ -18,36 +18,13 @@ const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/NotFoundError');
 const { validateUserBody, validateAuthentication } = require('./validators');
-// const whitelist = ['http://liamichev.students.nomoredomains.icu', 'https://liamichev.students.nomoredomains.icu']
-// const corsOptions = {
-//   // origin: process.env.NODE_ENV === 'development' ? ['*']: [
-//   //   'https://liamichev.students.nomoredomains.icu',
-//   //   'http://liamichev.students.nomoredomains.icu'
-//   // ],
-//   origin: 'http://liamichev.students.nomoredomains.icu',
-//   credentials: true,
-//   optionsSuccessStatus: 200,
-// };
-
 const corsOptions = {
-  credentials: true,
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  optionsSuccessStatus: 200,
+  // origin: process.env.NODE_ENV === 'development' ? ['*']: [
+  //   'https://liamichev.students.nomoredomains.icu',
+  //   'http://liamichev.students.nomoredomains.icu'
+  // ],
+  origin: ["http://localhost:7777", "http://liamichev.students.nomoredomains.icu"]
 };
-
-const whitelist = ['http://localhost:3000', 'http://liamichev.students.nomoredomains.icu', 'https://liamichev.students.nomoredomains.icu'];
-const corsOptionsDelegate = (req, callback) => {
-  if (whitelist.indexOf(req.header('Origin')) !== -1) {
-    corsOptions.origin = true;
-  } else {
-    corsOptions.origin = false;
-  }
-  callback(null, corsOptions);
-};
-
-app.get('/products/:id', cors(corsOptionsDelegate), (req, res) => {
-  res.json({ msg: 'This is CORS-enabled for a whitelisted domain.' });
-});
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
