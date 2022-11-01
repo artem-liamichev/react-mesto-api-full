@@ -5,6 +5,7 @@ const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictingRequestError = require('../errors/ConflictingRequestError');
 const UnauthorizedRequestError = require('../errors/UnauthorizedRequestError');
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const createUser = (req, res, next) => {
   const {
@@ -49,7 +50,7 @@ const login = (req, res, next) => {
               {
                 _id: user._id,
               },
-              'SECRET',
+              `${NODE_ENV === 'production' ? JWT_SECRET : 'SECRET'}`,
               { expiresIn: '7d' },
             );
             res.send({ token });
