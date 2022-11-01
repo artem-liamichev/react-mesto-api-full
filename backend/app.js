@@ -18,13 +18,17 @@ const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/NotFoundError');
 const { validateUserBody, validateAuthentication } = require('./validators');
-const corsOptions = {
-  origin: '*',
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: [
+//     'https://liamichev.students.nomoredomains.icu',
+//     'http://liamichev.students.nomoredomains.icu',
+//     'localhost:7777',
+//   ],
+//   credentials: true,
+//   optionsSuccessStatus: 200,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
