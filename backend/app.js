@@ -19,11 +19,9 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/NotFoundError');
 const { validateUserBody, validateAuthentication } = require('./validators');
 const corsOptions = {
-  // origin: process.env.NODE_ENV === 'development' ? ['*']: [
-  //   'https://liamichev.students.nomoredomains.icu',
-  //   'http://liamichev.students.nomoredomains.icu'
-  // ],
-  origin: ["http://localhost:7777", "http://liamichev.students.nomoredomains.icu"]
+  origin: '*',
+  credentials: true,
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
