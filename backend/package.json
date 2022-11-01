@@ -18,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/artem-liamichev/express-mesto-gha/issues"
   },
-  "homepage": "https://github.com/artem-liamichev/express-mesto-gha#readme",
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^8.23.0",
