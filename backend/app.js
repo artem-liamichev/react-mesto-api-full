@@ -23,7 +23,7 @@ const corsOptions = {
   //   'https://liamichev.students.nomoredomains.icu',
   //   'http://liamichev.students.nomoredomains.icu'
   // ],
-  origin: ['http://localhost:7777', 'https://localhost:7777', 'http://liamichev.students.nomoredomains.icu', 'https://liamichev.students.nomoredomains.icu'],
+  origin: 'http://liamichev.students.nomoredomains.icu',
   credentials: true,
   optionsSuccessStatus: 200,
 };
