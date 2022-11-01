@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'http://api.liamichev.students.nomoredomains.icu';
 
 const checkServerResponse = (res) => {
   if (res.ok) {

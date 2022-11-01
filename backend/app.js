@@ -20,10 +20,8 @@ const NotFoundError = require('./errors/NotFoundError');
 const { validateUserBody, validateAuthentication } = require('./validators');
 const corsOptions = {
   origin: [
-    'https://localhost:3000',
-    'http://localhost:3000',
-    'http://localhost:7777',
-    'https://localhost:7777',
+    'https://liamichev.students.nomoredomains.icu',
+    'http://liamichev.students.nomoredomains.icu',
     'localhost:7777',
     'localhost:3000',
   ],
