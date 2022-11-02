@@ -1,9 +1,10 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const { errors } = require('celebrate');
-
+require('dotenv').config();
 const { PORT = 3000 } = process.env;
 
 const app = express();
@@ -27,6 +28,7 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 200,
 };
+
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
