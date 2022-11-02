@@ -109,4 +109,4 @@ class Api {
   }
  }
 
- export const api = new Api('http://localhost:3000')
+ export const api = new Api(process.env.NODE_ENV === 'development' ? 'http://localhost:3000':'https://api.liamichev.students.nomoredomains.icu')
