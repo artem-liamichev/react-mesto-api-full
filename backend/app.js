@@ -38,9 +38,7 @@ app.get('/crash-test', () => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
-app.get('*', function(req, res) {
-  res.redirect('https://' + req.headers.host + req.url);
-})
+
 app.post('/signin', validateAuthentication, login);
 app.post('/signup', validateUserBody, createUser);
 app.use(auth);
