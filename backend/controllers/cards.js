@@ -31,13 +31,13 @@ const deleteCard = (req, res, next) => {
   Card.findById(req.params.cardId)
     .then((card) => {
       if (!card) {
-        next(new NotFoundError('Карточка с указанным id не найдена'));
-      } else if (req.user._id === card.owner.toString()) {
-          return card.delete()
-            .then(() => res.send({ message: 'Карточка удалена' }));
-      } else {
-        next(new ForbiddenError('Вы можете удалить только свою карточку'));
+        return next(new NotFoundError('Карточка с указанным id не найдена'));
       }
+      if (req.user._id === card.owner.toString()) {
+        return card.delete()
+          .then(() => res.send({ message: 'Карточка удалена' }));
+      }
+      return next(new ForbiddenError('Вы можете удалить только свою карточку'));
     })
     .catch((err) => {
       if (err.name === 'CastError') {
