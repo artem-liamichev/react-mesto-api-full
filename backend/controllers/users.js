@@ -115,7 +115,7 @@ const getUserById = (req, res, next) => {
 const updateUserProfile = (req, res, next) => {
   const { name, about } = req.body;
   User.findByIdAndUpdate(req.user._id, {
-    $set: { name, about},
+    $set: { name, about },
   }, { runValidators: true, new: true })
     .then((user) => {
       res.status(200).send(user);
@@ -130,7 +130,7 @@ const updateUserProfile = (req, res, next) => {
 };
 
 const updateUserAvatar = (req, res, next) => {
-  const { avatar } = req.body
+  const { avatar } = req.body;
   User.findByIdAndUpdate(req.user._id, {
     $set: { avatar },
   }, { runValidators: true, new: true })

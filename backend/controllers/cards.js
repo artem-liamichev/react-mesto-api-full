@@ -14,8 +14,8 @@ const getCards = (req, res, next) => {
 
 const createCard = (req, res, next) => {
   const { name, link } = req.body;
-  const owner =  req.user._id;
-  Card.create({ name, link, owner})
+  const owner = req.user._id;
+  Card.create({ name, link, owner })
     .then((doc) => doc.populate(['owner', 'likes']))
     .then((card) => res.send(card))
     .catch((err) => {
@@ -33,8 +33,8 @@ const deleteCard = (req, res, next) => {
       if (!card) {
         next(new NotFoundError('Карточка с указанным id не найдена'));
       } else if (req.user._id === card.owner.toString()) {
-        card.delete();
-        res.send({ message: 'deleted' });
+          return card.delete()
+            .then(() => res.send({ message: 'Карточка удалена' }));
       } else {
         next(new ForbiddenError('Вы можете удалить только свою карточку'));
       }

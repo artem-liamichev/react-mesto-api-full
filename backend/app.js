@@ -1,24 +1,22 @@
-
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
 const { errors } = require('celebrate');
 require('dotenv').config();
+
 const { PORT = 3000 } = process.env;
-
 const app = express();
-
+const cors = require('cors');
 const { userRoutes } = require('./routes/users');
 const { cardRoutes } = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const errorHandler = require('./middlewares/errorHandler');
 // const cors = require('./middlewares/cors')
-const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/NotFoundError');
 const { validateUserBody, validateAuthentication } = require('./validators');
+
 const corsOptions = {
   origin: [
     'https://liamichev.students.nomoredomains.icu',
@@ -56,6 +54,7 @@ async function main() {
   await mongoose.connect('mongodb://localhost:27017/mestodb');
 
   await app.listen(PORT, () => {
+    // eslint-disable-next-line no-console
     console.log(`App listening on port ${PORT}`);
   });
 }
