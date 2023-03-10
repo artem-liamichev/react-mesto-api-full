@@ -1,7 +1,9 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
+import { useTranslation } from 'react-i18next';
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
+    const { t } = useTranslation();
 
     const linkInputRef = React.useRef();
     const nameInputRef = React.useRef();
@@ -22,14 +24,14 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
             isOpen={isOpen}
             onClose = {onClose}
             onSubmit={handleAddPlaceSubmit}
-            popupTitle='Новое место'
-            buttonTitle='Сохранить'>
+            popupTitle={t("new-place")}
+            buttonTitle={t("save")}>
             <div className="field-container">
-            <input ref={nameInputRef} id="place-input" className="popup__input" name="name" type="text" placeholder="Название" required minLength="2" maxLength="30" />
+            <input ref={nameInputRef} id="place-input" className="popup__input" name="name" type="text" placeholder={t("place-name")} required minLength="2" maxLength="30" />
             <span className="place-input-error" id="place-error"></span>
             </div>
             <div className="field-container">
-            <input ref={linkInputRef} id="link-input" className="popup__input" name="link" type="url" placeholder="Ссылка на картинку" required />
+            <input ref={linkInputRef} id="link-input" className="popup__input" name="link" type="url" placeholder={t("link-to-an-image")} required />
             <span className="link-input-error" id="link-error"></span>
             </div>
       </PopupWithForm>

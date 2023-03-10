@@ -18,7 +18,6 @@ import * as apiAuth from '../utils/apiAuth.js';
 import { CurrenUserContext } from '../contexts/CurrentUserContext.js';
 import { api } from '../utils/api.js';
 
-
 function App() {
 
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
@@ -66,7 +65,6 @@ function App() {
 
 
   const onLogin = (data) => {
-    // console.log('data:', data)
     return apiAuth
       .authorize(data)
       .then((data) => {
@@ -82,7 +80,6 @@ function App() {
     }
 
   const onRegister = (data) => {
-    // console.log('data:', data)
     return apiAuth
       .register(data)
       .then(() => {
@@ -189,7 +186,7 @@ function App() {
     api.addCard(newCard) 
       .then((newCard)=> {
         // setCards([newCard, ...cards]); 
-        setCards([...cards, newCard]); 
+        setCards([newCard, ...cards]); 
         closeAllPopups()
       })
       .catch((err) => {

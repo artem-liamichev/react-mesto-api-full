@@ -2,9 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import PopupWithForm from './PopupWithForm';
 import { CurrenUserContext } from '../contexts/CurrentUserContext';
+import { useTranslation } from 'react-i18next';
 
 
 function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
+
+    const { t } = useTranslation();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -35,20 +38,20 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
     return (
         <PopupWithForm
             name='profile'
-            popupTitle='Редактировать профиль'
-            buttonTitle='Сохранить'
+            popupTitle={t("edit-profile")}
+            buttonTitle={t("save")}
             isOpen={isOpen}
             onClose={onClose}
             onSubmit={handleSubmit}
         >
             <div className="field-container">
-                <input id="name-input" className="popup__input" name="surname" type="text" placeholder="Имя" required minLength="2" maxLength="40"
+                <input id="name-input" className="popup__input" name="surname" type="text" placeholder={t("name")} required minLength="2" maxLength="40"
                 value={userName || ''} onChange={handleChangeUserName}
                 />
                 <span className="name-input-error" id="name-error"></span>
             </div>
             <div className="field-container">
-                <input id="job-input" className="popup__input" name="job" type="text" placeholder="Профессия" required minLength="2" maxLength="200"
+                <input id="job-input" className="popup__input" name="job" type="text" placeholder={t("profession")} required minLength="2" maxLength="200"
                 value={userDescription || ''} onChange={handleChangeUserDescription}
                 />
                 <span className="job-input-error" id="job-error"></span>

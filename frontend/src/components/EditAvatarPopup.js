@@ -1,7 +1,10 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
+import { useTranslation } from 'react-i18next';
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
+    
+    const { t } = useTranslation();
 
     const linkInputRef = React.useRef();
 
@@ -18,10 +21,10 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
             isOpen={isOpen}
             onClose={onClose}
             onSubmit={handleSubmit}
-            popupTitle='Обновить аватар'
-            buttonTitle='Сохранить'>
+            popupTitle={t("update-avatar")}
+            buttonTitle={t("save")}>
             <div className="field-container">
-            <input ref={linkInputRef} id="avatar-input" className="popup__input" name="avatar" type="url" placeholder="Ссылка на картинку" required />
+            <input ref={linkInputRef} id="avatar-input" className="popup__input" name="avatar" type="url" placeholder="link-to-an-image" required />
             <span className="avatar-input-error" id="avatar-error"></span>
             </div>
       </PopupWithForm>

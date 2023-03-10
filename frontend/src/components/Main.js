@@ -30,15 +30,17 @@ function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onCa
         </button>
 
         <div className="profile__info">
-          <div className="profile__info-container">
-            <h1 className="profile__name">{currentUser.name}</h1>
-            <button className="profile__edit-button" type="button"
-            onClick={onEditProfile}
-            >
-              <img className="profile__edit-button-image" src={editButton} alt="редактировать профиль"/>
-            </button>
-          </div>
+          <div  className="profile__info-inner">
+            <div className="profile__info-container">
+              <h1 className="profile__name">{currentUser.name}</h1>
+              <button className="profile__edit-button" type="button"
+              onClick={onEditProfile}
+              >
+                <img className="profile__edit-button-image" src={editButton} alt="редактировать профиль"/>
+              </button>
+            </div>
           <p className="profile__bio">{currentUser.about}</p>
+          </div>
         </div>
       </div>
       <button className="profile__add-button" type="button"

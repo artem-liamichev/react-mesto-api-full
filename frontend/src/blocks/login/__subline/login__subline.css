@@ -1,0 +1,6 @@
+.login__subline {
+    opacity: 0.8;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.3s;
+}

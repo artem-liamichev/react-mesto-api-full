@@ -17,12 +17,12 @@ function Card({card, onCardClick, onCardLike, onCardDelete}) {
       }  
     
     function handleLikeClick() {
-       onCardLike(card);
-    }
+        onCardLike(card);
+      }
 
     function handleDeleteClick() {
-      onCardDelete(card._id);
-   }
+        onCardDelete(card._id);
+      }
       
   return (
           <article className="element">

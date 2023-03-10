@@ -7,6 +7,7 @@
 @media screen and (max-width: 767px) {
   .profile__container {
     flex-wrap: wrap;
+    padding-bottom: 20px;
   }
 }
 

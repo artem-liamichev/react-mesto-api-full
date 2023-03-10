@@ -1,0 +1,21 @@
+{
+    "sign-in": "Войти",
+    "sign-up": "Зарегистрироваться",
+    "logout": "Выйти",
+    "password": "Пароль",
+    "login": "Вход",
+    "registration": "Регистрация",
+    "link-to-an-image": "Ссылка на картинку",
+    "save": "Сохранить",
+    "saving": "Сохранение...",
+    "update-avatar": "Обновить аватар",
+    "edit-profile": "Редактировать профиль",
+    "name": "Имя",
+    "profession": "Профессия",
+    "you-have-successfully-signed-up": "Вы успешно зарегистрировались!",
+    "sorry-something-went-wrong-try-again": "Что-то пошло не так! Попробуйте ещё раз.",
+    "new-place": "Новое место.",
+    "place-name": "Название",
+    "already-registered": "Уже зарегистрированы?",
+    "not-registered": "Ещё не зарегистрированы?"
+}

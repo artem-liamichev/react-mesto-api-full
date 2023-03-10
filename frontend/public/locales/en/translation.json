@@ -1,0 +1,19 @@
+{
+    "sign-in": "Log in",
+    "sign-up": "Sign up",
+    "logout": "Log out",
+    "password": "Password",
+    "login": "Log in",
+    "already-registered": "Already registered?",
+    "registration": "Sign up",
+    "link-to-an-image": "Link to an image",
+    "save": "Save",
+    "update-avatar": "Update avatar",
+    "edit-profile": "Edit profile",
+    "name": "Name",
+    "profession": "Profession",
+    "you-have-successfully-signed-up": "You have successfully signed up!",
+    "sorry-something-went-wrong-try-again": "Sorry, something went wrong! Try again.",
+    "new-place": "New place.",
+    "place-name": "Name"
+}
