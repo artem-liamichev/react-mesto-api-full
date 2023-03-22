@@ -51,7 +51,7 @@ app.use(errors());
 app.use(errorHandler);
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/mestodb');
+  await mongoose.connect('mongodb://0.0.0.0:27017/mestodb');
 
   await app.listen(PORT, () => {
     // eslint-disable-next-line no-console
