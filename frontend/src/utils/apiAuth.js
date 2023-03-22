@@ -1,4 +1,4 @@
-export const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:3000':'https://api.liamichev.students.nomoredomains.icu';
+export const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:3002':'https://api.liamichev.students.nomoredomains.icu';
 
 const checkServerResponse = (res) => {
   if (res.ok) {
