@@ -1,10 +1,14 @@
-# react-mesto-api-full
-
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд - в директории `backend/`, а фронтенд - в `frontend/`. 
-
-IP 178.154.203.246
+# Project: Mesto
 Frontend https://liamichev.students.nomoredomains.icu
 Backend https://api.liamichev.students.nomoredomains.icu
 
-# Репозиторий
-https://github.com/artem-liamichev/react-mesto-api-full.git
+### Project Description and Functionality
+An application with photos of favorite places. You can create your own profile, add photos, and select the ones you like the most. Includes the frontend and backend parts with the following features: user authorization and registration, operations with cards and users. The backend is in the `backend/` directory and the frontend is in the `frontend/` directory
+
+**The project was created using**
+- React;
+- JavaScript;
+- Express.js;
+- MongoDB;
+- HTML, CSS
+- Grid, Flexbox;
