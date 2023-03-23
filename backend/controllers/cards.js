@@ -5,7 +5,6 @@ const ForbiddenError = require('../errors/ForbiddenError');
 
 const getCards = (req, res, next) => {
   Card.find({})
-    // .populate(['owner', 'likes'])
     .then((cards) => res.send(cards))
     .catch((err) => {
       next(err);
@@ -52,7 +51,6 @@ const likeCard = (req, res, next) => {
   Card.findByIdAndUpdate(req.params.cardId, {
     $addToSet: { likes: req.user._id },
   }, { new: true })
-    // .populate('likes')
     .then((card) => {
       if (!card) {
         next(new NotFoundError('Передан несуществующий id карточки'));

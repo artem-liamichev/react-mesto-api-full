@@ -11,9 +11,6 @@ function Card({card, onCardClick, onCardLike, onCardDelete}) {
 
     function handleClick() {
         onCardClick(card);
-        console.log('card.owner:', card.owner)
-        console.log('currentUser._id:', currentUser._id)
-        console.log('isOwn:', isOwn)
       }  
     
     function handleLikeClick() {
